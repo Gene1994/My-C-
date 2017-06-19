@@ -3,3 +3,7 @@ int main()
 {
     return 0;
 }
+//main程序在1_1_SimpleMain.cc中,则用"CC 1_1_SimpleMain.cc"  在cmd中编译该程序.生成可执行文件1_1_SimpleMain.exe.
+//cmd中输入"1_1_SimpleMain"或".\1_1_SimpleMain"(忽略扩展名)运行程序
+//UNIX系统中不可忽略扩展名,输入"a.out"或"./a.out"
+//UNIX中通过"echo $?" Windows中通过"echo %ERRORLEVEL%"查看状态
