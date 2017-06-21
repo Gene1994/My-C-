@@ -1,0 +1,24 @@
+struct Sales_data
+{
+    std::string nookNo;
+    unsigned units_sold = 0;
+    double revenue = 0.0;
+};
+
+关键字:struct
+    struct紧跟类名和类体(类体可以为空)
+    !!类的定义最后加分号!!
+    
+Sales_data sd1, sd2;    //该类型对象的定义
+
+头文件:
+    预处理器:
+        预处理功能: #include 预处理器看到#include标记时就会用指定的头文件的内容代替#include
+        头文件保护符:
+            #ifndef
+            #define
+            .....................
+            #endif
+预处理变量无视C++语言中关于作用域的规则.
+
+头文件即使没有包含在任何其他头文件中 也应该设置保护符.好习惯!
