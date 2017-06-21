@@ -1,0 +1,12 @@
+类型别名
+两种方法定义类型别名:
+1.关键字:typedef.
+    typedef double wages;
+    typedef double base, *p; //base是double同义词,p是double*同义词
+    
+2.关键词using
+    using SI = Sales_item;
+    
+    
+auto(C++ 11)
+decltype(C++ 11)
