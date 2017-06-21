@@ -1,0 +1,26 @@
+const对象创建后其值就不能再改变.
+默认状态下,const对象仅在文件内有效.如果想在多个文件之间共享const对象,必须在变量的定义之前加extern关键字.
+
+const的引用,对常量的引用.  不能被用作修改它所绑定的对象.
+    const int ci = 1024;
+    const int &r1 = ci; //正确
+    r1 = 42;        //错误,r1是对常亮的引用
+    int &r2 = ci;   //错误,试图让一个非常量引用指向一个常量对象.
+    
+    int i = 42;
+    const int &r1 = i; //允许将const int &绑定到一个普通的int对象上
+    int &r2 = r1 * 2; //错误:r2是一个普通的非常量引用.
+    const引用->int可以
+    int引用->const不可以
+    
+    const int &r2 = i;
+    r2绑定(非常量整数)i是合法的行为.然而,不允许通过r2修改i的值.尽管如此,i的值仍然允许通过其他途径修改.
+    
+const指针
+    必须初始化,记得从右向左阅读
+    int errNumb = 0;
+    int *const curErr = &errNumb;   //*放在const之前说明指针是一个常量,不变的是指针的本身而非指向指针的值.!!
+    
+顶层const:指针本身是常量
+底层const:表示指针所指对象是常量
+
