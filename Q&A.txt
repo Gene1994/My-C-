@@ -1,0 +1,33 @@
+1. Q:How to solve the problem of flash back//VS编译器运行后闪退，处理方法
+   A: 1、system（“pause”）；
+      2、getchar（）；
+      3、Ctrl+F5
+      接下来我们就分开讨论一下两者的用法和优缺点：
+      system（“pause”）：需要引入预处理头文件#include<stdlib.h>||#include<windows.h>
+      用法：置于return（）；返回语句之前，否则存在无意义
+      优点：解决闪退问题，副作用小
+      缺点：调用系统功能，内存开销大
+
+      getchar（）：
+      用法：置于return（）；返回语句之前，否则存在无意义
+      优点：开销小，接收一个字符结束程序
+      缺点：根据具体情况进行使用，因为getchar（）；需要接受一个字符串来代表结束，而在有些函数中，
+      他明确需要接受一个字符串来作为返回值，如果用getchar（）；来解决闪退问题，容易混淆，在程序运行时会引入错误。
+
+      可以看到，虽然都可以解决运行结果闪退问题，但在处理上是完全不同的，虽然在操作上也近似相同，但是在内存，cpu等层面上，
+      开销有时不一样的，所以你可以根据你的喜好选择适合你的一种方式哦！！！！！不过还是比较建议system（“pause”）；
+      这种方式的，在引入与处理文件是也是比较讲究的，如果有大量使用系统功能是，当然#include<windows.h>是头好选择，
+      #include<stdlib.h>当然适合那些使用较多库函数的时候
+      //http://blog.csdn.net/sinat_36101354/article/details/53155836
+      
+2. Q:再不明确对象类型时
+   A:
+    decltype(str.size()) i = 0;
+    while (i < str.size()) str[i++] = 'X';
+    //使用.size()的返回值类型时 使用了decltype() 定义i的类型
+    
+3. Q：What does the following program do? Is it valid? If not, why not? //Excise 3.9
+      string s;
+      cout << s[0] << endl;
+   A:This code was dereferencing and printing the first item stored in s. 
+     Since s is empty, such operation is invalid, a.k.a. undefined behavior.
