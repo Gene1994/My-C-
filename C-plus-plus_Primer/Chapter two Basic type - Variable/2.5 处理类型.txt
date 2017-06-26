@@ -10,3 +10,15 @@
     
 auto(C++ 11)
 decltype(C++ 11)
+
+auto类型说明符
+    关键字:auto
+    auto让编译器替我们去分析表达式所属的类型,auto让编译器通过初始值来推算变量的类型.显然,auto定义的变量必须有初始值.
+    
+decltype类型指示符
+    选择并返回操作数的数据类型.
+    decltype(f()) sum = x; //sum的类型就是函数f的返回类型
+    //decltype的结果可以是引用类型\
+    int i = 42, *p = &i, &r = i;
+    decltype(r + 0) b; //正确:加法的结果是int 因此b是一个(未初始化的)int
+    decltype(*p) c; //错误: c是int&,因此必须初始化.
