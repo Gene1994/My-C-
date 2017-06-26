@@ -1,0 +1,32 @@
+#include <string>
+using std::string;
+
+定义和初始化
+string s1;
+string s2(s1); //s2是s1的副本
+string s3("hhh")
+string s7(10,'c') //直接初始化,s7的内容是cccccccccc
+
+读写string对象
+int main()
+{
+    string s;
+    cin >> s;//讲string对象读入s,遇到空白停止:输入"hello world!" 输出"hello"
+    cout << s << endl;
+    return 0;
+}
+
+当希望保留输入的空白符时,使用getline()函数代替原来的>>运算符.
+getline参数是一个输入流和一个string对象 从给定的输入流读入内容,直到遇到换行符为止(换行符也被读进来)
+
+string的empty和size操作
+bool empty();
+string::size_type size();
+
+两个string相加:两个string连起来
+string s1 = "hello";
+string s2 = s1 + "world!"; //正确
+string s3 = "hello" + "world" //错误:不能把字面值直接相加 '+'两侧至少有一个string
+字符串字面值与string是不同的类型.!!
+
+处理string对象中的字符
