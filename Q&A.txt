@@ -31,3 +31,12 @@
       cout << s[0] << endl;
    A:This code was dereferencing and printing the first item stored in s. 
      Since s is empty, such operation is invalid, a.k.a. undefined behavior.
+
+4. Q:c++解引用
+   A:引用是给变量起一个别名。实际上都指向内存的同一块地址。
+      int a=5;
+      int *ap=&a
+      ap和&a的内容其实是一样的。都是内存地址。
+      你可以cout<<ap和cout<<&a看看。
+      解引用就是返回内存地址中保存的值。
+      cout<<*ap；输出a的值。这就是解引用。实际上输出*&a也是一样的。
